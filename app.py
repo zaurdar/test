@@ -8,12 +8,12 @@ chemin_script = os.path.abspath(sys.argv[0])
 path = os.path.dirname(chemin_script)
 def extract():
     path_extract = os.path.join(path,"extract.bat")
-    subprocess.run(path_extract)
+    subprocess.run(path_extract,shell=True)
     path_mk = os.path.join(path, "mk.bat")
-    subprocess.run(path_mk)
+    subprocess.run(path_mk,shell=True)
 def delete_cache():
     path_delete = os.path.join(path, "delete.bat")
-    subprocess.run(path_delete)
+    subprocess.run(path_delete,shell=True)
 
 st.title("App Projet 2024")
 st.header('video creation')
