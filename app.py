@@ -40,14 +40,16 @@ if file is not None:
     st.write("Le fichier est enregistré temporairement à :", file_path)
     nom_fichier, extension = os.path.splitext(file_path)
 
-    n_file_path = "CVM3D/test.mp4"
+    n_file_path = os.path.join(path,"CVM3D/test.mp4")
     shutil.move(file_path, n_file_path)
 if st.button("create edit"):
     extract()
 if st.button("read video"):
-    st.video("CVM3D/output.mp4")
+    output_path = os.path.join(path,"CVM3D/output.mp4")
+    st.video(output_path)
 if st.button("empty the cache"):
     delete_cache()
 st.header('video example')
 st.subheader("l'attaque des titans :\n")
-st.video("CVM3D/exemple_snk.mp4")
+video_path = os.path.join(path,"CVM3D/exemple_snk.mp4")
+st.video(video_path)
