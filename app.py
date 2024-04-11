@@ -12,8 +12,30 @@ def extract():
     path_mk = os.path.join(path, "mk.bat")
     subprocess.run(path_mk,shell=True)
 def delete_cache():
-    path_delete = os.path.join(path, "delete.bat")
-    subprocess.run(path_delete,shell=True)
+    fichiers_a_supprimer = [
+        os.path.join(path, "CVM3D\\vidéos\\projo_1.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_2.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_3.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_4.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_5.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_6.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_7.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_8.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_9.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_10.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_11.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_12.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_13.mp4"),
+        os.path.join(path, "CVM3D\\vidéos\\projo_14.mp4"),
+    ]
+
+    # Suppression des fichiers
+    for fichier in fichiers_a_supprimer:
+        if os.path.exists(fichier):
+            os.remove(fichier)
+            print(f"Fichier {fichier} supprimé avec succès.")
+        else:
+            print(f"Le fichier {fichier} n'existe pas.")
 
 st.title("App Projet 2024")
 st.header('video creation')
