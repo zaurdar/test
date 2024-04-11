@@ -4,16 +4,22 @@ import tempfile
 import os
 import shutil
 import sys
+chemin_script = os.path.abspath(sys.argv[0])
+path = os.path.dirname(chemin_script)
 def extract():
-    subprocess.run("extract.bat")
-    subprocess.run("mk.bat")
+    path_extract = os.path.join(path,"extract.bat")
+    subprocess.run(path_extract)
+    path_mk = os.path.join(path, "mk.bat")
+    subprocess.run(path_mk)
 def delete_cache():
-    subprocess.run("delete.bat")
+    path_delete = os.path.join(path, "delete.bat")
+    subprocess.run(path_delete)
 
 st.title("App Projet 2024")
 st.header('video creation')
-chemin_script = os.path.abspath(sys.argv[0])
-st.write("chemin : "+str(chemin_script))
+
+st.write("chemin : "+str(path))
+
 
 
 file = st.file_uploader("entrez la video à editer")
