@@ -3,6 +3,7 @@ import streamlit as st
 import tempfile
 import os
 import shutil
+import sys
 def extract():
     subprocess.run("extract.bat")
     subprocess.run("mk.bat")
@@ -11,6 +12,9 @@ def delete_cache():
 
 st.title("App Projet 2024")
 st.header('video creation')
+chemin_script = os.path.abspath(sys.argv[0])
+st.write(chemin_script)
+
 file = st.file_uploader("entrez la video à editer")
 if file is not None:
     # Créer un fichier temporaire
