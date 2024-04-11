@@ -8,6 +8,7 @@ from moviepy.editor import AudioFileClip
 import moviepy.editor as mpe
 file_path = ""
 
+
 def cropandscotch(im1, im2, x1, x2, y1, y2):
     a = np.shape(im1)
     b = np.shape(im2)
@@ -113,6 +114,7 @@ def play():
 
 
 # In[60]:
+
 
 
 
