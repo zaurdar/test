@@ -4,10 +4,10 @@ import tempfile
 import os
 import shutil
 def extract():
-    subprocess.run("C:/Users/gabriel/Desktop/test_webapp/extract.bat")
-    subprocess.run("C:/Users/gabriel/Desktop/test_webapp/mk.bat")
+    subprocess.run("extract.bat")
+    subprocess.run("mk.bat")
 def delete_cache():
-    subprocess.run("C:/Users/gabriel/Desktop/test_webapp/delete.bat")
+    subprocess.run("delete.bat")
 
 st.title("App Projet 2024")
 st.header('video creation')
