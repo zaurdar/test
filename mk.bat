@@ -1,4 +1,4 @@
-cd C:\Users\gabriel\Desktop\test_webapp
+
 IF EXIST "CVM3D\vidéos\projo_1.mp4" (
     ffmpeg -i CVM3D\test.mp4 -vn -acodec copy CVM3D\vidéos\audio.aac
     ffmpeg -i houdain2.jpg -vf scale=1920:1080 houdain.jpg

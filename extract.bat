@@ -1,4 +1,4 @@
-cd C:\Users\gabriel\Desktop\test_webapp
+
 IF EXIST "CVM3D\test.mp4" (
 
     ffmpeg -i CVM3D\test.mp4 -vf scale=1920:1080 output.mp4
