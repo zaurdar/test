@@ -1,4 +1,3 @@
-cd mount\src\test
 del CVM3D\vidéos\projo_1.mp4
 del CVM3D\vidéos\projo_2.mp4
 del CVM3D\vidéos\projo_3.mp4
