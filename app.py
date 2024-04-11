@@ -13,7 +13,8 @@ def delete_cache():
 st.title("App Projet 2024")
 st.header('video creation')
 chemin_script = os.path.abspath(sys.argv[0])
-st.write(chemin_script)
+st.write("chemin : "+str(chemin_script))
+
 
 file = st.file_uploader("entrez la video à editer")
 if file is not None:
