@@ -32,6 +32,7 @@ def app():
     y = st.slider("coordonnée y ", 0, 1080)
     temp_dir = tempfile.mkdtemp()
     if st.button("enter"):
+        st.write("ok")
         test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y,' \
                                                                                                     'ffmpeg -i ' + str(
             temp_dir) + '/fond.jpg -vf "drawbox=x=' + str(x) + ':y=' + str(
@@ -78,7 +79,6 @@ def app():
 
         execute(test_fond_cmd)
         st.image(str(temp_dir) + "/fond_2.jpg")
-
 
 def main():
     st.title("Page de connexion")
