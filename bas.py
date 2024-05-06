@@ -46,5 +46,5 @@ def app():
         st.image(image_temp_path)
 
     if st.button("test"):
-        subprocess.run("streamlit run bas.py")
+        shutil.copy("bas.py", temp_dir)
 app()
