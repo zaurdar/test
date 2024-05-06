@@ -31,7 +31,7 @@ def app():
     x = st.slider("coordonnée x ", 0, 1920)
     y = st.slider("coordonnée y ", 0, 1080)
     temp_dir = tempfile.mkdtemp()
-    st.image("CVM3D/fond/fond_test.jpg")
+    st.image("/CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
         st.write(temp_dir+'/fond.jpg')
         shutil.copy("CVM3D/fond/fond_test.jpg", temp_dir)
