@@ -41,11 +41,11 @@ def app():
         st.write(image_filename)
         # Chemin vers l'image dans le dossier temporaire
         image_temp_path = os.path.join(temp_dir, image_filename)
+        image_temp_path2 =os.path.join(temp_dir, "fond.jpg")
         st.write(image_temp_path)
         st.image(image_temp_path)
-        test_fond_cmd = 'cd '+temp_dir+',' \
-                        'ffmpeg -i '+image_filename+' -vf scale=1920:1080 /fond.jpg -y,'
+        test_fond_cmd = 'ffmpeg -i '+image_temp_path+' -vf scale=1920:1080 ' + image_temp_path2 +' -y'
         execute(test_fond_cmd)
-        st.image(str(temp_dir) + "/fond.jpg")
+        st.image(image_temp_path2)
 
 app()
