@@ -43,7 +43,7 @@ def app():
         image_temp_path = os.path.join(temp_dir, image_filename)
         st.write(image_temp_path)
         st.image(image_temp_path)
-        test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y,'
+        test_fond_cmd = 'ffmpeg -i '+image_temp_path+' -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y,'
         execute(test_fond_cmd)
         st.image(str(temp_dir) + "/fond.jpg")
 
