@@ -42,5 +42,6 @@ def app():
 
         # Chemin vers l'image dans le dossier temporaire
         image_temp_path = os.path.join(temp_dir, image_filename)
+        st.write(image_temp_path)
         st.image("image_temp_path")
 app()
