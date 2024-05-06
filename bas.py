@@ -49,5 +49,5 @@ def app():
         shutil.copy("bas.py", temp_dir)
         filename = os.path.basename("bas.py")
         temp_path = os.path.join(temp_dir, filename)
-        subprocess.run("streamlit run "+temp_path)
+        subprocess.run("streamlit run "+temp_path[1:])
 app()
