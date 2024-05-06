@@ -36,7 +36,7 @@ def app():
         st.write(p_temp_dir+'/fond.jpg')
         temp_dir = p_temp_dir[1:]
         st.write(temp_dir + '/fond.jpg')
-        shutil.copy("CVM3D/fond/fond_test.jpg", temp_dir)
+        shutil.copy("CVM3D/fond/fond_test.jpg", temp_dir + '/fond.jpg')
         st.image(str(temp_dir) + '/fond.jpg')
         st.image(str(temp_dir) + "/fond_2.jpg")
 app()
