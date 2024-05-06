@@ -30,14 +30,11 @@ def app():
     st.header("calibrage")
     x = st.slider("coordonnée x ", 0, 1920)
     y = st.slider("coordonnée y ", 0, 1080)
-    temp = tempfile.mkdtemp()
+    temp_dir = tempfile.mkdtemp()
     st.image("CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
-        temp_dir = str(path)+str(temp)
-        st.write(temp_dir)
-        test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y'
-
-        execute(test_fond_cmd)
+        st.write(temp_dir+'/fond.jpg')
+        shutil.move("CVM3D/fond/fond_test.jpg", temp_dir)
         st.image(str(temp_dir) + '/fond.jpg')
         st.image(str(temp_dir) + "/fond_2.jpg")
 app()
