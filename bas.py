@@ -34,7 +34,7 @@ def app():
     st.image("CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
         st.write(temp_dir+'/fond.jpg')
-        shutil.move("CVM3D/fond/fond_test.jpg", temp_dir)
+        shutil.copy("CVM3D/fond/fond_test.jpg", temp_dir)
         st.image(str(temp_dir) + '/fond.jpg')
         st.image(str(temp_dir) + "/fond_2.jpg")
 app()
