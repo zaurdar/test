@@ -30,14 +30,17 @@ def app():
     st.header("calibrage")
     x = st.slider("coordonnée x ", 0, 1920)
     y = st.slider("coordonnée y ", 0, 1080)
-    p_temp_dir = tempfile.mkdtemp()
+    temp_dir = tempfile.mkdtemp()
     st.image("CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
-        st.write(p_temp_dir+'/fond.jpg')
-        temp_dir = p_temp_dir[1:]
 
-        ndir= temp_dir + '/fond.jpg'
-        st.write(ndir)
-        shutil.copy("CVM3D/fond/fond_test.jpg", ndir)
-        st.image(ndir)
+        # Copier l'image dans le dossier temporaire
+        shutil.copy("CVM3D/fond/fond_test.jpg", temp_dir)
+
+        # Obtenir le nom de l'image dans le dossier temporaire
+        image_filename = os.path.basename("CVM3D/fond/fond_test.jpg")
+
+        # Chemin vers l'image dans le dossier temporaire
+        image_temp_path = os.path.join(temp_dir, image_filename)
+        st.image("image_temp_path")
 app()
