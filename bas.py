@@ -44,4 +44,7 @@ def app():
         image_temp_path = os.path.join(temp_dir, image_filename)
         st.write(image_temp_path)
         st.image(image_temp_path)
+
+    if st.button("test"):
+        subprocess.run("streamlit run bas.py")
 app()
