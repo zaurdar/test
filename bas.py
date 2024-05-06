@@ -46,6 +46,9 @@ def app():
         st.image(image_temp_path)
         test_fond_cmd = 'ffmpeg -i '+image_temp_path+' -vf scale=1920:1080 ' + image_temp_path2 +' -y'
         execute(test_fond_cmd)
-        st.image(image_temp_path2)
+        if os.path.exists(image_temp_path2):
+            st.image(image_temp_path2)
+        else:
+            st.write("pas de path")
 
 app()
