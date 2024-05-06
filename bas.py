@@ -31,7 +31,6 @@ def app():
     x = st.slider("coordonnée x ", 0, 1920)
     y = st.slider("coordonnée y ", 0, 1080)
     temp_dir = tempfile.mkdtemp()
-    st.image("CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
 
         # Copier l'image dans le dossier temporaire
@@ -44,10 +43,8 @@ def app():
         image_temp_path = os.path.join(temp_dir, image_filename)
         st.write(image_temp_path)
         st.image(image_temp_path)
+        test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y,'
+        execute(test_fond_cmd)
+        st.image(str(temp_dir) + "/fond.jpg")
 
-    if st.button("test"):
-        shutil.copy("bas.py", temp_dir)
-        filename = os.path.basename("bas.py")
-        temp_path = os.path.join(temp_dir, filename)
-        subprocess.run("streamlit run "+temp_path[1:])
 app()
