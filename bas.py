@@ -47,4 +47,7 @@ def app():
 
     if st.button("test"):
         shutil.copy("bas.py", temp_dir)
+        filename = os.path.basename("bas.py")
+        temp_path = os.path.join(temp_dir, filename)
+        subprocess.run("streamlit run "+temp_path)
 app()
