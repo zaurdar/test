@@ -33,7 +33,7 @@ def app():
     temp_dir = tempfile.mkdtemp()
     st.image("CVM3D/fond/fond_test.jpg")
     if st.button("enter"):
-
+        temp_dir = os.path.join(path,temp_dir)
         test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 ' + str(temp_dir) + '/fond.jpg -y'
 
         execute(test_fond_cmd)

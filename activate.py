@@ -96,7 +96,7 @@ def main():
     if st.button("Se connecter"):
         if username == "moi" and password == "malice":
             st.success("Connexion réussie !")
-            app()
+            subprocess.run("streamlit run app.py")
         else:
             st.error("Nom d'utilisateur ou mot de passe incorrect")
 
