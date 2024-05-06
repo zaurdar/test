@@ -79,5 +79,6 @@ def app():
             y + 330) + ':w=120:h=210:color=green@0.5" ' + str(temp_dir) + '/fond_2.jpg -y,'
 
         execute(test_fond_cmd)
-        st.image(str(temp_dir) + "/fond_2.jpg")
+        image_path = os.path.join(path, temp_dir)
+        st.image(str(image_path) + "/fond_2.jpg")
 app()
