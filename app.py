@@ -92,39 +92,41 @@ st.video(video_path)
 st.header("calibrage")
 x = st.slider("coordonnée x ",0,1920)
 y = st.slider("coordonnée y ",0,1080)
+temp_dir = tempfile.mkdtemp()
+
 if st.button("enter"):
-    test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 CVM3D/fond/fond.jpg -y,' \
-                    'ffmpeg -i CVM3D/fond/fond.jpg -vf "drawbox=x=' + str(x) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 160) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 160) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 2 * (160)) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 2 * (160)) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 3 * (160)) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 3 * (160)) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 4 * (160)) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 4 * (160)) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 5 * (160)) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 5 * (160)) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,' \
-                   'ffmpeg -i CVM3D/fond/fond_2.jpg -vf "drawbox=x=' + str(x + 6 * (160)) + ':y=' + str(
-        y) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_1.jpg -y,' \
-             'ffmpeg -i CVM3D/fond/fond_1.jpg -vf "drawbox=x=' + str(x + 6 * (160)) + ':y=' + str(
-        y + 330) + ':w=120:h=210:color=green@0.5" CVM3D/fond/fond_2.jpg -y,'
+    test_fond_cmd = 'ffmpeg -i CVM3D/fond/fond_test.jpg -vf scale=1920:1080 '+str(temp_dir)+'/fond.jpg -y,' \
+                    'ffmpeg -i '+str(temp_dir)+'/fond.jpg -vf "drawbox=x=' + str(x) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 160) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 160) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 2 * (160)) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 2 * (160)) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 3 * (160)) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 3 * (160)) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 4 * (160)) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 4 * (160)) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 5 * (160)) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 5 * (160)) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,' \
+                   'ffmpeg -i '+str(temp_dir)+'/fond_2.jpg -vf "drawbox=x=' + str(x + 6 * (160)) + ':y=' + str(
+        y) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_1.jpg -y,' \
+             'ffmpeg -i '+str(temp_dir)+'/fond_1.jpg -vf "drawbox=x=' + str(x + 6 * (160)) + ':y=' + str(
+        y + 330) + ':w=120:h=210:color=green@0.5" '+str(temp_dir)+'/fond_2.jpg -y,'
 
     execute(test_fond_cmd)
-    st.image("CVM3D/fond/fond_2.jpg")
+    st.image(str(temp_dir)+"/fond_2.jpg")
 st.header('video creation')
 file = st.file_uploader("entrez la video à editer")
 if file is not None:
