@@ -39,7 +39,7 @@ def app():
 
         # Obtenir le nom de l'image dans le dossier temporaire
         image_filename = os.path.basename("CVM3D/fond/fond_test.jpg")
-
+        st.write(image_filename)
         # Chemin vers l'image dans le dossier temporaire
         image_temp_path = os.path.join(temp_dir, image_filename)
         st.write(image_temp_path)
