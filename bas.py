@@ -80,3 +80,4 @@ def app():
 
         execute(test_fond_cmd)
         st.image(str(temp_dir) + "/fond_2.jpg")
+app()
