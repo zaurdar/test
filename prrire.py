@@ -1,7 +1,4 @@
 import streamlit as st
-st.slider("echelle de confiance")
-txt = st.text_input("entrez ")
-if st.button("mettre un message"):
-
-    st.write(txt)
-st.image("coeur.png")
+x = st.slider("echelle de confiance")
+st.write("t'es une merde")
+st.image("caca.png")
