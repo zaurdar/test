@@ -17,47 +17,20 @@ y = 0
 mk_cmd ='ffmpeg -i CVM3D/test.mp4 -vn -acodec copy CVM3D/videos/audio.aac ' \
         '-y,' \
     'ffmpeg -i houdain2.jpg -vf scale=1920:1080 houdain.jpg -y,' \
-    'ffmpeg -i houdain.jpg -i CVM3D/videos/temp_1.mp4 -filter_complex ' \
-        '"[0:v][1:v]overlay=722:435" CVM3D/videos/output_1.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_1.mp4 -i CVM3D/videos/temp_2.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=722:514" ' \
-        'CVM3D/videos/output_2.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_2.mp4 -i CVM3D/videos/temp_3.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=788:435" ' \
-        'CVM3D/videos/output_3.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_3.mp4 -i CVM3D/videos/temp_4.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=788:514" ' \
-        'CVM3D/videos/output_4.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_4.mp4 -i CVM3D/videos/temp_5.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=853:435" ' \
-        'CVM3D/videos/output_5.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_5.mp4 -i CVM3D/videos/temp_6.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=853:514" ' \
-        'CVM3D/videos/output_6.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_6.mp4 -i CVM3D/videos/temp_7.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=928:435" ' \
-        'CVM3D/videos/output_7.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_7.mp4 -i CVM3D/videos/temp_8.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=928:514" ' \
-        'CVM3D/videos/output_8.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_8.mp4 -i CVM3D/videos/temp_9.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1001:435" ' \
-        'CVM3D/videos/output_9.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_9.mp4 -i CVM3D/videos/temp_10.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1001:514" ' \
-        'CVM3D/videos/output_10.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_10.mp4 -i CVM3D/videos/temp_11.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1067:435" ' \
-        'CVM3D/videos/output_11.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_11.mp4 -i CVM3D/videos/temp_12.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1067:514" ' \
-        'CVM3D/videos/output_12.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_12.mp4 -i CVM3D/videos/temp_13.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1133:435" ' \
-        'CVM3D/videos/output_13.mp4 -y,' \
-    'ffmpeg -i CVM3D/videos/output_13.mp4 -i CVM3D/videos/temp_14.mp4 ' \
-        '-filter_complex "[0:v][1:v]overlay=1133:514" ' \
-        'CVM3D/videos/output_14.mp4 -y,' \
+    'ffmpeg -i houdain.jpg -i CVM3D/videos/temp_1.mp4 -filter_complex "[0:v][1:v]overlay=722:435" CVM3D/videos/output_1.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_1.mp4 -i CVM3D/videos/temp_2.mp4 -filter_complex "[0:v][1:v]overlay=722:514" CVM3D/videos/output_2.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_2.mp4 -i CVM3D/videos/temp_3.mp4 -filter_complex "[0:v][1:v]overlay=788:435" CVM3D/videos/output_3.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_3.mp4 -i CVM3D/videos/temp_4.mp4 -filter_complex "[0:v][1:v]overlay=788:514" CVM3D/videos/output_4.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_4.mp4 -i CVM3D/videos/temp_5.mp4 -filter_complex "[0:v][1:v]overlay=853:435" CVM3D/videos/output_5.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_5.mp4 -i CVM3D/videos/temp_6.mp4 -filter_complex "[0:v][1:v]overlay=853:514" CVM3D/videos/output_6.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_6.mp4 -i CVM3D/videos/temp_7.mp4 -filter_complex "[0:v][1:v]overlay=928:435" CVM3D/videos/output_7.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_7.mp4 -i CVM3D/videos/temp_8.mp4 -filter_complex "[0:v][1:v]overlay=928:514" CVM3D/videos/output_8.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_8.mp4 -i CVM3D/videos/temp_9.mp4 -filter_complex "[0:v][1:v]overlay=1001:435" CVM3D/videos/output_9.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_9.mp4 -i CVM3D/videos/temp_10.mp4 -filter_complex "[0:v][1:v]overlay=1001:514" CVM3D/videos/output_10.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_10.mp4 -i CVM3D/videos/temp_11.mp4 -filter_complex "[0:v][1:v]overlay=1067:435" CVM3D/videos/output_11.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_11.mp4 -i CVM3D/videos/temp_12.mp4 -filter_complex "[0:v][1:v]overlay=1067:514" CVM3D/videos/output_12.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_12.mp4 -i CVM3D/videos/temp_13.mp4 -filter_complex "[0:v][1:v]overlay=1133:435" CVM3D/videos/output_13.mp4 -y,' \
+    'ffmpeg -i CVM3D/videos/output_13.mp4 -i CVM3D/videos/temp_14.mp4 -filter_complex "[0:v][1:v]overlay=1133:514" CVM3D/videos/output_14.mp4 -y,' \
     'ffmpeg -i CVM3D/videos/output_14.mp4 -vf "eq=brightness=-0.15:' \
         'contrast=0.5:saturation=1.5" -c:a copy ' \
         'CVM3D/videos/output_15.mp4 -y,' \
@@ -236,52 +209,23 @@ if file is not None:
     nom_fichier, extension = os.path.splitext(file_path)
 
     n_file_path = os.path.join(path,"CVM3D/test.mp4")
-    shutil.move(file_path, n_file_path)
 
 if st.button("create edit"):
-    extract_cmd = 'ffmpeg -i '+file_path+' -vf scale=1920:1080 output.mp4 -y,' \
-                  'mkdir "CVM3D/videos",' \
-                  'ffmpeg -i output.mp4 -vf crop=120:210:' \
-                  + str(x) + ':' + str(y) \
-                  + ' CVM3D/videos/projo_1.mp4 -y,' \
-        'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(
-        x) + ':' + str(y + 330) + ' CVM3D/videos/projo_2.mp4 -y,' \
-                                  'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 160) + ':' + str(
-        y) + ' CVM3D/videos/projo_3.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 160) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_4.mp4 -y,' \
-                   'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 2 * (160)) + ':' + str(
-        y) + ' CVM3D/videos/projo_5.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 2 * (160)) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_6.mp4 -y,' \
-                   'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 3 * (160)) + ':' + str(
-        y) + ' CVM3D/videos/projo_7.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 3 * (160)) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_8.mp4 -y,' \
-                   'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 4 * (160)) + ':' + str(
-        y) + ' CVM3D/videos/projo_9.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 4 * (160)) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_10.mp4 -y,' \
-                   'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 5 * (160)) + ':' + str(
-        y) + ' CVM3D/videos/projo_11.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 5 * (160)) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_12.mp4 -y,' \
-                   'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 6 * (160)) + ':' + str(
-        y) + ' CVM3D/videos/projo_13.mp4 -y,' \
-             'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' \
-                  + str(x + 6 * (160)) + ':' + str(
-        y + 330) + ' CVM3D/videos/projo_14.mp4 -y,' \
+    extract_cmd = 'ffmpeg -i '+file_path+' -vf scale=1920:1080 CVM3D/test.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x) + ':' + str(y) + ' CVM3D/videos/projo_1.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x) + ':' + str(y + 330) + ' CVM3D/videos/projo_2.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 160) + ':' + str(y) + ' CVM3D/videos/projo_3.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 160) + ':' + str(y + 330) + ' CVM3D/videos/projo_4.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 2 * (160)) + ':' + str(y) + ' CVM3D/videos/projo_5.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 2 * (160)) + ':' + str(y + 330) + ' CVM3D/videos/projo_6.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 3 * (160)) + ':' + str(y) + ' CVM3D/videos/projo_7.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 3 * (160)) + ':' + str(y + 330) + ' CVM3D/videos/projo_8.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 4 * (160)) + ':' + str(y) + ' CVM3D/videos/projo_9.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 4 * (160)) + ':' + str(y + 330) + ' CVM3D/videos/projo_10.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 5 * (160)) + ':' + str(y) + ' CVM3D/videos/projo_11.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 5 * (160)) + ':' + str(y + 330) + ' CVM3D/videos/projo_12.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 6 * (160)) + ':' + str(y) + ' CVM3D/videos/projo_13.mp4 -y,' \
+                'ffmpeg -i CVM3D/test.mp4 -vf crop=120:210:' + str(x + 6 * (160)) + ':' + str(y + 330) + ' CVM3D/videos/projo_14.mp4 -y,' \
                    'ffmpeg -i CVM3D/videos/projo_1.mp4 -vf ' \
                    'scale=36:50 CVM3D/videos/temp_1.mp4 -y,' \
                    'ffmpeg -i CVM3D/videos/projo_2.mp4 -vf ' \
